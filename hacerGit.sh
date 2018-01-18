@@ -10,6 +10,6 @@ read nombre
 
 git commit -m $nombre
 #descomentar esta linea para crear el origin
-git remote add origin1 https://github.com/Mancheguet/sge_17_18_treball.git
+git remote add origin1 https://github.com/Mancheguet/sge1718.git
 #hacer el push para subir los archivos
 git push -u origin1 master
