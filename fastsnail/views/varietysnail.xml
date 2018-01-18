@@ -1,0 +1,36 @@
+<odoo>
+	<data>
+		 <record model="ir.ui.view" id="fastsnail.varietysnail_form_view">
+            <field name="name">Snail Variety</field>
+            <field name="model">fastsnail.varietysnail</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                      <group>
+                        <field name="name"/>
+                        <field name="idvariety"/>
+                        <field name="thermalresist"/>
+                        <field name="description"/>
+                        <field name="totalsnails"/>                        
+                      </group>
+                  </sheet>
+                </form>
+              </field>
+            </record>
+
+            <record model="ir.ui.view" id="fastsnail.varietysnail_tree_view">
+            <field name="name">Snail Variety</field>
+            <field name="model">fastsnail.varietysnail</field>
+            <field name="arch" type="xml">
+              <tree>
+                    <field name="name"/>
+                    <field name="idvariety"/>
+                    <field name="thermalresist"/>
+                    <field name="description"/>
+                    <field name="totalsnails"/> 
+                </tree>
+              </field>
+            </record>
+
+	</data>
+</odoo>

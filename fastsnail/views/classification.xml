@@ -1,0 +1,38 @@
+<odoo>
+  <data>
+     <record model="ir.ui.view" id="fastsnail.classification_form_view">
+            <field name="name">Classifications</field>
+            <field name="model">fastsnail.classification</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                      <group>
+                        <field name="name"/>
+                        <field name="idclassification"/>
+                        <field name="idrace"/>
+                        <field name="idfirstsnail"/>
+                        <field name="idsecondsnail"/>
+                        <field name="idthirdsnail"/>                        
+                      </group>
+                  </sheet>
+                </form>
+              </field>
+            </record>
+
+            <record model="ir.ui.view" id="fastsnail.classification_tree_view">
+            <field name="name">Classifications</field>
+            <field name="model">fastsnail.classification</field>
+            <field name="arch" type="xml">
+              <tree>
+                        <field name="name"/>
+                        <field name="idclassification"/>
+                        <field name="idrace"/>
+                        <field name="idfirstsnail"/>
+                        <field name="idsecondsnail"/>
+                        <field name="idthirdsnail"/>
+                </tree>
+              </field>
+            </record>
+
+  </data>
+</odoo>

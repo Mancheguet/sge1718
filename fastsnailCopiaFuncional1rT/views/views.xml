@@ -1,0 +1,100 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="fastsnail.variety_action_window">
+      <field name="name">Variety snail</field>
+      <field name="res_model">fastsnail.varietysnail</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fastsnail.snail_action_window">
+      <field name="name">Snails</field>
+      <field name="res_model">fastsnail.snail</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fastsnail.competition_action_window">
+      <field name="name">Competitions</field>
+      <field name="res_model">fastsnail.competition</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fastsnail.season_action_window">
+      <field name="name">Seasons</field>
+      <field name="res_model">fastsnail.season</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fastsnail.race_action_window">
+      <field name="name">Races</field>
+      <field name="res_model">fastsnail.race</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fastsnail.classification_action_window">
+      <field name="name">Classifications</field>
+      <field name="res_model">fastsnail.classification</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fastsnail.employee_action_window">
+      <field name="name">Employees</field>
+      <field name="res_model">fastsnail.employee</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="fastsnail.action_server">
+      <field name="name">fastsnail server</field>
+      <field name="model_id" ref="model_fastsnail_fastsnail"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="fastsnail" id="fastsnail.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Management" id="fastsnail.menu_1" parent="fastsnail.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Variety" id="fastsnail.menu_variety_list" parent="fastsnail.menu_1"
+              action="fastsnail.variety_action_window"/>
+
+    <menuitem name="Snails" id="fastsnail.menu_snail_list" parent="fastsnail.menu_1"
+              action="fastsnail.snail_action_window"/>
+
+    <menuitem name="Competitions" id="fastsnail.menu_competition_list" parent="fastsnail.menu_1"
+              action="fastsnail.competition_action_window"/>
+
+    <menuitem name="Seasons" id="fastsnail.menu_season_list" parent="fastsnail.menu_1"
+              action="fastsnail.season_action_window"/>
+
+    <menuitem name="Races" id="fastsnail.menu_race_list" parent="fastsnail.menu_1"
+              action="fastsnail.race_action_window"/>
+
+    <menuitem name="Classifications" id="fastsnail.menu_classification_list" parent="fastsnail.menu_1"
+              action="fastsnail.classification_action_window"/>
+
+    <menuitem name="Employees" id="fastsnail.menu_employee_list" parent="fastsnail.menu_1"
+              action="fastsnail.employee_action_window"/>
+  <!--
+    <menuitem name="Server to list" id="fastsnail" parent="fastsnail.menu_2"
+              action="fastsnail.action_server"/>
+    -->
+  </data>
+</odoo>

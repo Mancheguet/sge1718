@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+     <record model="ir.ui.view" id="fastsnail.season_form_view">
+            <field name="name">Seasons</field>
+            <field name="model">fastsnail.season</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                      <group>
+                        <field name="name"/>
+                        <field name="idseason"/>
+                        <field name="startdate"/>
+                        <field name="enddate"/>
+                        <field name="description"/>
+                        <field name="competition"/>
+                        <field name="totalrace"/>                      
+                      </group>
+                  </sheet>
+                </form>
+              </field>
+            </record>
+
+            <record model="ir.ui.view" id="fastsnail.season_tree_view">
+            <field name="name">Seasons</field>
+            <field name="model">fastsnail.season</field>
+            <field name="arch" type="xml">
+              <tree>
+                        <field name="name"/>
+                        <field name="idseason"/>
+                        <field name="startdate"/>
+                        <field name="enddate"/>
+                        <field name="description"/>
+                        <field name="competition"/>
+                        <field name="totalrace"/>
+                </tree>
+              </field>
+            </record>
+
+  </data>
+</odoo>

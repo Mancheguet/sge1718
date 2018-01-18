@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+     <record model="ir.ui.view" id="fastsnail.race_form_view">
+            <field name="name">Races</field>
+            <field name="model">fastsnail.race</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                      <group>
+                        <field name="name"/>
+                        <field name="idrace"/>
+                        <field name="startdate"/>
+                        <field name="description"/>
+                        <field name="season"/>
+                        <field name="totalsnails" mode="kanban">
+                                    <kanban>
+                                      <field name="name" />
+                                      <field name="photo" />
+                                        <templates>
+                                          <t t-name="kanban-box">
+                                            <div class="oe_product_vignette" style="flex: 1 1 180px; margin: 5 auto;">
+                                              <a type="open">
+                                                <img class="oe_kanban_image" t-att-src="kanban_image('fastsnail.snail', 'photo', record.id.value)"
+                                                  style="height: 200px; width: 166px; display: block; margin: 0 auto;"/>
+                                              </a>
+                                              <div class="oe_product_desc" style="text-align: center;">
+                                                <h4>
+                                                  <a type="edit">
+                                                    <field name="name"></field>
+                                                  </a>
+                                                </h4>
+                                              </div>
+                                            </div>
+                                          </t>
+                                        </templates>
+                                      </kanban>
+
+                        </field>
+                      </group>
+                  </sheet>
+                </form>
+              </field>
+            </record>
+
+          <record model="ir.ui.view" id="race_calendar">
+          <field name="name">Races</field>
+          <field name="model">fastsnail.race</field>
+          <field name="arch" type="xml">
+            <calendar string="race calendar"
+                date_start="startdate"
+                color="season"
+                mode="month">
+                <field name="name"/>
+              </calendar>
+              </field>
+            </record>
+
+            <record model="ir.ui.view" id="fastsnail.race_tree_view">
+            <field name="name">Races</field>
+            <field name="model">fastsnail.race</field>
+            <field name="arch" type="xml">
+              <tree>
+                        <field name="name"/>
+                        <field name="idrace"/>
+                        <field name="startdate"/>
+                        <field name="description"/>
+                        <field name="season"/>
+                        <field name="totalsnails"/>
+                </tree>
+              </field>
+            </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="primermodulo.list">
+      <field name="name">primermodulo list</field>
+      <field name="model">primermodulo.primermodulo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="date"/>
+          <field name="complete"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!--vista de la pagina de wiki -->
+    <!--
+    <record model="ir.ui.view" id="primermodulo.list">
+        <field name="name">primermodulo form</field>
+        <field name="model">primermodulo.primermodulo</field>
+        <field name="arch" type="xml">
+            <form string="primer modulo">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="complete"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     -->
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="primermodulo.action_window">
+      <field name="name">primermodulo window</field>
+      <field name="res_model">primermodulo.primermodulo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="primermodulo.action_server">
+      <field name="name">primermodulo server</field>
+      <field name="model_id" ref="model_primermodulo_primermodulo"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="primermodulo" id="primermodulo.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Menu 1" id="primermodulo.menu_1" parent="primermodulo.menu_root"/>
+    <menuitem name="Menu 2" id="primermodulo.menu_2" parent="primermodulo.menu_root"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="List" id="primermodulo.menu_1_list" parent="primermodulo.menu_1"
+              action="primermodulo.action_window"/>
+    <!--
+    <menuitem name="Server to list" id="primermodulo" parent="primermodulo.menu_2"
+              action="primermodulo.action_server"/>
+    -->
+  </data>
+</odoo>

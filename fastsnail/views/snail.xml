@@ -1,0 +1,82 @@
+<odoo>
+  <data>
+     <record model="ir.ui.view" id="fastsnail.snail_form_view">
+            <field name="name">Snail</field>
+            <field name="model">fastsnail.snail</field>
+            <field name="arch" type="xml">
+              <form>
+                <sheet>
+                      <group>
+                        <field name="name"/>
+                        <field name="idsnail"/>
+                        <field name="snailclass"/>
+                        <!-- <field name="totalraces"/> -->
+                        <field name="description"/>
+                        <field name="photo" widget="image"/>                        
+                      </group>
+                  </sheet>
+                </form>
+              </field>
+            </record>
+
+      <record model="ir.ui.view" id="snail_kanban">
+      <field name="name">Snail</field>
+      <field name="model">fastsnail.snail</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="name" />
+          <field name="photo" />
+            <templates>
+              <t t-name="kanban-box">
+                <div class="oe_product_vignette" style="flex: 1 1 180px; margin: 5 auto;">
+                  <a type="open">
+                    <img class="oe_kanban_image" t-att-src="kanban_image('fastsnail.snail', 'photo', record.id.value)"
+                      style="height: 200px; width: 166px; display: block; margin: 0 auto;"/>
+                  </a>
+                  <div class="oe_product_desc" style="text-align: center;">
+                    <h4>
+                      <a type="edit">
+                        <field name="name"></field>
+                      </a>
+                    </h4>
+                  </div>
+                </div>
+              </t>
+            </templates>
+          </kanban>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="snail_search">
+        <field name="name">Snail</field>
+        <field name="model">fastsnail.snail</field>
+        <field name="arch" type="xml">
+          <search>
+                        <field name="name"/>
+                        <field name="idsnail"/>
+                        <field name="snailclass"/>
+                        <!-- <field name="totalraces"/> -->
+                        <field name="description"/>
+                        <field name="photo" widget="image"/>   
+            <filter name="group_by_snailclass" string="Group by snailclass" context="{'group_by': 'snailclass'}"/>
+          </search>
+        </field>
+      </record>
+
+            <record model="ir.ui.view" id="fastsnail.snail_tree_view">
+            <field name="name">Snail</field>
+            <field name="model">fastsnail.snail</field>
+            <field name="arch" type="xml">
+              <tree>
+                        <field name="name"/>
+                        <field name="idsnail"/>
+                        <field name="snailclass"/>
+                        <!-- <field name="totalraces"/> -->
+                        <field name="description"/>
+                        <field name="photo"/>
+                </tree>
+              </field>
+            </record>
+
+  </data>
+</odoo>
