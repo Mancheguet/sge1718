@@ -2,7 +2,7 @@
   <data>
      <record model="ir.ui.view" id="fastsnail.snail_form_view">
             <field name="name">Snail</field>
-            <field name="model">fastsnail.snail</field>
+            <field name="model">res.partner</field>
             <field name="arch" type="xml">
               <form>
                 <sheet>
@@ -12,7 +12,8 @@
                         <field name="snailclass"/>
                         <!-- <field name="totalraces"/> -->
                         <field name="description"/>
-                        <field name="photo" widget="image"/>                        
+                        <field name="photo" widget="image"/>
+                        <field name="is_snail" invisible="1"/>                        
                       </group>
                   </sheet>
                 </form>
@@ -21,7 +22,7 @@
 
       <record model="ir.ui.view" id="snail_kanban">
       <field name="name">Snail</field>
-      <field name="model">fastsnail.snail</field>
+      <field name="model">res.partner</field>
       <field name="arch" type="xml">
         <kanban>
           <field name="name" />
@@ -49,7 +50,7 @@
 
       <record model="ir.ui.view" id="snail_search">
         <field name="name">Snail</field>
-        <field name="model">fastsnail.snail</field>
+        <field name="model">res.partner</field>
         <field name="arch" type="xml">
           <search>
                         <field name="name"/>
@@ -57,7 +58,8 @@
                         <field name="snailclass"/>
                         <!-- <field name="totalraces"/> -->
                         <field name="description"/>
-                        <field name="photo" widget="image"/>   
+                        <field name="photo" widget="image"/>
+                        <field name="is_snail" invisible="1"/>    
             <filter name="group_by_snailclass" string="Group by snailclass" context="{'group_by': 'snailclass'}"/>
           </search>
         </field>
@@ -65,7 +67,7 @@
 
             <record model="ir.ui.view" id="fastsnail.snail_tree_view">
             <field name="name">Snail</field>
-            <field name="model">fastsnail.snail</field>
+            <field name="model">res.partner</field>
             <field name="arch" type="xml">
               <tree>
                         <field name="name"/>
@@ -74,6 +76,7 @@
                         <!-- <field name="totalraces"/> -->
                         <field name="description"/>
                         <field name="photo"/>
+                        <field name="is_snail" invisible="1"/> 
                 </tree>
               </field>
             </record>

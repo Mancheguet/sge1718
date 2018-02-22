@@ -4,6 +4,9 @@
             <field name="name">Competitions</field>
             <field name="model">fastsnail.competition</field>
             <field name="arch" type="xml">
+            <header>
+            	<button name="copy_competition" type="object" string="Copiar competicion:"/>
+          	</header>
               <form>
                 <sheet>
                       <group>

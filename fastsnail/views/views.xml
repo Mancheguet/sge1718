@@ -13,8 +13,29 @@
 
     <record model="ir.actions.act_window" id="fastsnail.snail_action_window">
       <field name="name">Snails</field>
-      <field name="res_model">fastsnail.snail</field>
+      <field name="res_model">res.partner</field>
+      <field name="context">{'default_is_snail': True}</field>
+      <field name="domain">[('is_snail','=',True)]</field>
       <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="fastsnail.snail_action_kanban">
+      <field eval="1" name="sequence"/>
+      <field name="view_mode">kanban</field>
+      <field name="view_id" ref="fastsnail.snail_kanban"/>
+      <field name="act_window_id" ref="fastsnail.snail_action_window"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="fastsnail.snail_action_tree">
+      <field eval="2" name="sequence"/>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="fastsnail.snail_tree_view"/>
+      <field name="act_window_id" ref="fastsnail.snail_action_window"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="fastsnail.snail_action_form">
+      <field eval="3" name="sequence"/>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="fastsnail.snail_form_view"/>
+      <field name="act_window_id" ref="fastsnail.snail_action_window"/>
     </record>
 
     <record model="ir.actions.act_window" id="fastsnail.competition_action_window">
@@ -31,6 +52,7 @@
 
     <record model="ir.actions.act_window" id="fastsnail.race_action_window">
       <field name="name">Races</field>
+      <field name="domain"></field>
       <field name="res_model">fastsnail.race</field>
       <field name="view_mode">tree,form,calendar</field>
     </record>
